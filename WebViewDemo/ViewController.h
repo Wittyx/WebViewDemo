@@ -6,9 +6,17 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import <WebKit/WebKit.h>
 
-@interface ViewController : NSViewController
+static NSString* PerferencesKey_DeveloperExtras = @"WebKitDeveloperExtras";
 
+
+@interface ViewController : NSViewController <WKUIDelegate, WKNavigationDelegate,WKScriptMessageHandler>
+
+@property (weak) IBOutlet WKWebView *webView;
+
+@property (strong) WKWebView *webView1;
+- (IBAction)clickRunJS:(id)sender;
 
 @end
 
